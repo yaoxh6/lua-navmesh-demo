@@ -19,3 +19,12 @@ function init()
 end
 
 init()
+
+require "student"
+
+local objStudent = Sdudent.new()
+
+objStudent:setName("Nioh2")
+local strName = objStudent:getName()
+log_tree("strName", strName)
+log_tree("objStudent", getmetatable(objStudent))

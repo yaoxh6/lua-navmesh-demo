@@ -18,5 +18,6 @@ set(LUNA_INCLUDE_DIRS ${LUA_SRC_PATH} ${LUNA_SRC_PATH})
 add_subdirectory(Navmesh)
 add_subdirectory(lua_navmesh)
 add_subdirectory(app)
+add_subdirectory(student)
 
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT "app")
