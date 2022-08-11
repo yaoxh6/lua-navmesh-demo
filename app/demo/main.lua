@@ -15,7 +15,8 @@ local function init_navmesh()
 end
 
 function init()
-    init_navmesh()
+    -- init_navmesh()
+    log_tree("navmesh", navmesh)
 end
 
 init()

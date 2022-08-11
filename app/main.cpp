@@ -4,13 +4,11 @@
 #include "student/Student.h"
 extern "C" int luaopen_luna(lua_State * L);
 
-
 int main(int argc, char** argv)
 {
 	lua_State* m_L = luaL_newstate();
 	if (!m_L)
 		return false;
-	luaL_requiref(m_L, "luna", luaopen_luna, 0);
 	luaL_requiref(m_L, "navmesh", luaopen_navmesh, 0);
 	luaL_requiref(m_L, "student", luaopen_student, 0);
 	luaL_openlibs(m_L);
