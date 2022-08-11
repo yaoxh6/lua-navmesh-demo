@@ -11,22 +11,20 @@ public:
 
 static int Student(lua_State *L)
 {
-	size_t iBytes = sizeof(struct StudentTag);
-	struct StudentTag *pStudent;
-	pStudent = (struct StudentTag *)lua_newuserdata(L, iBytes);
+	size_t iBytes = sizeof(StudentTag);
+	StudentTag *pStudent;
+	pStudent = (StudentTag *)lua_newuserdata(L, iBytes);
 
 	 //设置元表
 	luaL_getmetatable(L, "Student");
 	lua_setmetatable(L, -2);
-
-	//lua_pushnumber(L, 123);
 
 	return 1; // 新的userdata已经在栈上了
 }
 
 static int GetName(lua_State *L)
 {
-	struct StudentTag *pStudent = (struct StudentTag *)luaL_checkudata(L, 1, "Student");
+	StudentTag *pStudent = (StudentTag *)luaL_checkudata(L, 1, "Student");
 	lua_pushstring(L, pStudent->strName);
 	return 1;
 }
@@ -34,7 +32,7 @@ static int GetName(lua_State *L)
 static int SetName(lua_State *L)
 {
 	// 第一个参数是userdata
-	struct StudentTag *pStudent = (struct StudentTag *)luaL_checkudata(L, 1, "Student");
+	StudentTag *pStudent = (StudentTag *)luaL_checkudata(L, 1, "Student");
 
 	// 第二个参数是一个字符串
 	const char *pName = luaL_checkstring(L, 2);
@@ -46,14 +44,14 @@ static int SetName(lua_State *L)
 
 static int GetAge(lua_State *L)
 {
-	struct StudentTag *pStudent = (struct StudentTag *)luaL_checkudata(L, 1, "Student");
+	StudentTag *pStudent = (StudentTag *)luaL_checkudata(L, 1, "Student");
 	lua_pushinteger(L, pStudent->iAge);
 	return 1;
 }
 
 static int SetAge(lua_State *L)
 {
-	struct StudentTag *pStudent = (struct StudentTag *)luaL_checkudata(L, 1, "Student");
+	StudentTag *pStudent = (StudentTag *)luaL_checkudata(L, 1, "Student");
 
 	int iAge = luaL_checkinteger(L, 2);
 	luaL_argcheck(L, iAge >= 6 && iAge <= 100, 2, "Wrong Parameter");

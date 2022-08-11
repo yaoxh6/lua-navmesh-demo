@@ -23,9 +23,21 @@ init()
 
 require "student"
 
-local objStudent = Sdudent.new()
+local first = Sdudent.new()
 
-objStudent:setName("Nioh2")
-local strName = objStudent:getName()
+first:setName("Nioh1")
+local strName = first:getName()
 log_tree("strName", strName)
-log_tree("objStudent", getmetatable(objStudent))
+log_tree("first", getmetatable(first))
+
+local second = Sdudent.new()
+
+second:setName("Nioh2")
+local strName = second:getName()
+log_tree("strName", strName)
+log_tree("second", getmetatable(second))
+
+first:setName("Nioh3")
+local strName = first:getName()
+log_tree("strName", strName)
+log_tree("second", second:getName())
