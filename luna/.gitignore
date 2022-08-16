@@ -1,0 +1,43 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+/Debug
+/test.VC.db
+/.vs/luna/v14
+/luna.VC.db
+/luna.VC.VC.opendb
+/x64/Debug/luna.ilk
+/x64/Debug/luna.log
+/x64/Debug/luna.pdb
+/x64/Debug/luna.Build.CppClean.log
+*.ilk
+*.pdb
+*.tlog
+*.idb
+*.log
+.DS_Store

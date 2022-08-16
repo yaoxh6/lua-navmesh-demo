@@ -83,7 +83,5 @@ int luaopen_student(lua_State *L)
 	lua_setfield(L, -2, "__index");
 	luaL_setfuncs(L, arrayFunc_meta, 0);
 	luaL_newlib(L, arrayFunc);
-	//lua_pushvalue(L, -1);
-	lua_setglobal(L, "Sdudent"); /* the module name */
 	return 1;
 }

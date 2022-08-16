@@ -1,6 +1,7 @@
 #include "lua_navmesh.h"
 LUA_EXPORT_CLASS_BEGIN(navmesh)
 LUA_EXPORT_METHOD(set_flags)
+LUA_EXPORT_METHOD(set_flags_)
 LUA_EXPORT_METHOD(set_extent)
 LUA_EXPORT_METHOD(find_path)
 LUA_EXPORT_CLASS_END()
@@ -40,11 +41,17 @@ int navmesh::set_flags(lua_State* L) {
     return 0;
 }
 
+bool navmesh::set_flags_(int include_flags, int exclude_flags) {
+    m_navmesh.SetFlags(include_flags, exclude_flags);
+    return true;
+}
+
 int navmesh::set_extent(lua_State* L) { 
     auto query_extent = lua_to_vector(L, 1);
     m_navmesh.SetExtent(query_extent);
     return 0;
 }
+
 
 int navmesh::find_path(lua_State* L)
 {

@@ -37,9 +37,10 @@ public:
     int find_path(lua_State* L);
     bool init_navmesh(const char* nav_data_path, uint16_t include_flag, uint16_t exclude_flag, FVector nav_query_extent);
     int set_flags(lua_State* L);
+    bool set_flags_(int include_flags, int exclude_flags);
     int set_extent(lua_State* L);
 
-private:
     recast_navmesh m_navmesh;
+private:
 };
 
