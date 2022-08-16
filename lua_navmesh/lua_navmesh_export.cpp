@@ -10,11 +10,11 @@ static int lua_navmesh_create(lua_State* L)
     auto exclude_flag = lua_tonumber(L, 3);
     auto nav_query_extent = lua_to_vector(L, 4);
     auto m_navmesh = new navmesh();
-    auto init_res = m_navmesh->init_navmesh(nav_data_path, include_flag, exclude_flag, nav_query_extent);
-    if (!init_res) {
-        m_navmesh->~navmesh();
-        return 0;
-    }
+    //auto init_res = m_navmesh->init_navmesh(nav_data_path, include_flag, exclude_flag, nav_query_extent);
+    //if (!init_res) {
+    //    m_navmesh->~navmesh();
+    //    return 0;
+    //}
     lua_push_object(L, m_navmesh);
     return 1;
 }

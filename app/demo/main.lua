@@ -14,8 +14,8 @@ local function init_navmesh()
     log_tree("navmesh_instance_meta", getmetatable(navmesh_instance))
     -- navmesh_instance.set_flags(32767, 0);
     navmesh_instance.set_flags_(32767, 0);
-    local path_result = navmesh_instance.find_path({x= 620.40216064453, y = -100, z = 714.91369628906}, {x= 620.40216064453, y = 330, z = 714.91369628906})
-    log_tree("path_result", path_result)
+    -- local path_result = navmesh_instance.find_path({x= 620.40216064453, y = -100, z = 714.91369628906}, {x= 620.40216064453, y = 330, z = 714.91369628906})
+    -- log_tree("path_result", path_result)
 end
 
 function init()
@@ -28,20 +28,22 @@ init()
 local student = require "student"
 
 local first = student.new()
-
-first:setName("Nioh1")
+log_tree("xxstudent", student)
+log_tree("xxfirst", first)
+log_tree("xxfirst", getmetatable(first))
+first.setName("Nioh1")
 local strName = first:getName()
 log_tree("strName", strName)
 log_tree("first", getmetatable(first))
 
-local second = student.new()
+-- local second = student.new()
 
-second:setName("Nioh2")
-local strName = second:getName()
-log_tree("strName", strName)
-log_tree("second", getmetatable(second))
+-- second:setName("Nioh2")
+-- local strName = second:getName()
+-- log_tree("strName", strName)
+-- log_tree("second", getmetatable(second))
 
-first:setName("Nioh3")
-local strName = first:getName()
-log_tree("strName", strName)
-log_tree("second", second:getName())
+-- first:setName("Nioh3")
+-- local strName = first:getName()
+-- log_tree("strName", strName)
+-- log_tree("second", second:getName())
